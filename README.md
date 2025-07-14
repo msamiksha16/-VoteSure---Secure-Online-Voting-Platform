@@ -48,3 +48,15 @@ securevoting/
 │           │   └── alreadyVoted.html
 │           └── application.properties
 
+
+| Layer        | Technology                               |
+| ------------ | ---------------------------------------- |
+| Backend      | Spring Boot, Spring MVC                  |
+| Frontend     | Thymeleaf, Bootstrap                     |
+| Security     | Custom password validation (regex-based) |
+| Database     | H2 (in-memory), MySQL (optional)         |
+| ORM          | JPA with Hibernate                       |
+| Build Tool   | Maven                                    |
+| Java Version | Java 21                                  |
+
+
