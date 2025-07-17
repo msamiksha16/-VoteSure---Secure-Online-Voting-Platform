@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cast Your Vote - CastSure</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap & Google Fonts -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to right, #dee2e6, #f8f9fa);
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .vote-container {
+            background-color: #ffffff;
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            width: 100%;
+            max-width: 520px;
+            text-align: center;
+        }
+
+        .vote-container h2 {
+            color: #0d6efd;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .form-check {
+            text-align: left;
+            margin: 15px 0;
+        }
+
+        .form-check-input {
+            transform: scale(1.3);
+            margin-right: 10px;
+        }
+
+        .form-check-label {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #343a40;
+        }
+
+        .btn-vote {
+            width: 100%;
+            padding: 14px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            background: #0d6efd;
+            border: none;
+            color: white;
+            transition: background 0.3s ease;
+        }
+
+        .btn-vote:hover {
+            background: #084cdf;
+        }
+
+        .footer-note {
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: #6c757d;
+        }
+
+        .vote-icon {
+            font-size: 45px;
+            color: #0d6efd;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="vote-container">
+    <div class="vote-icon"><i class="bi bi-check2-square"></i></div>
+    <h2>Cast Your Vote</h2>
+
+    <form method="post" th:action="@{/vote}">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="choice" value="Candidate A" id="candidateA" required>
+            <label class="form-check-label" for="candidateA">Candidate A</label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="choice" value="Candidate B" id="candidateB">
+            <label class="form-check-label" for="candidateB">Candidate B</label>
+        </div>
+
+        <button type="submit" class="btn btn-vote mt-4">Submit Vote</button>
+    </form>
+
+    <div class="footer-note">
+        Your vote is encrypted and securely recorded.
+    </div>
+</div>
+
+</body>
+</html>
